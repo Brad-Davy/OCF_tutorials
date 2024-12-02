@@ -19,10 +19,10 @@ z = zarr.open('large_data.zarr', mode='r')
 numpy_array = np.zeros((10000, 10000), dtype='f4', order='C')
 chunk = z[1000:2000, 1000:2000]
 
-print(sys.getsizeof(chunk))
-print(sys.getsizeof(numpy_array))
-print(sys.getsizeof(z[:]))
-print(z.shape)
+print('{} MB'.format(sys.getsizeof(z) / 1e6))   
+print('{} MB'.format(sys.getsizeof(chunk) / 1e6))
+print('{} MB'.format(sys.getsizeof(numpy_array) / 1e6))
+print('{} MB'.format(sys.getsizeof(z[:]) / 1e6))
 
 
 
