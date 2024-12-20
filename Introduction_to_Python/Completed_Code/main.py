@@ -15,7 +15,7 @@ with open('input.txt', 'r') as input_file:
     for i in data:
         raw_data.append(float(i))
 
-def process_data(data, exponent):
+def process_data(data: list, exponent: int) -> list:
     if data > 50:
         return data
     else:
